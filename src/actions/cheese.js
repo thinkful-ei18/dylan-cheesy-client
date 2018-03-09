@@ -46,9 +46,9 @@ export const addCheese = cheese => dispatch => {
   dispatch(addCheeseRequest());
   return fetch(`${REACT_APP_API_BASE_URL}/cheeses`, {
     method: 'POST',
-    body: JSON.stringify({ cheese })
+    headers: { 'Content-Type': 'application/json'},
+    body: JSON.stringify({ name: cheese })
   })
-    .then(res => dispatch(addCheeseSuccess(cheese)))
-    .then(() => fetchCheeses())
+    .then(() => dispatch(fetchCheeses()))
     .catch(err => dispatch(addCheeseError(err)));
 };
