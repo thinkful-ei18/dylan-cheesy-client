@@ -5,7 +5,6 @@ import './index.css';
 import CheeseList from './components/cheese-list';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
-require('dotenv').config();
 // const cheeses = ['Bath Blue', 'Barkham Blue', 'Buxton Blue'];
 
 
