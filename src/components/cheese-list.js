@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchCheeses } from '../actions/cheese';
+import AddCheese from './add-cheese';
 
 export class CheeseList extends React.Component {
   componentDidMount() {
@@ -14,6 +15,7 @@ export class CheeseList extends React.Component {
 
     return (
       <div className="cheeseListContainer">
+        <AddCheese />
         <ul className="cheeseList">{cheeseListItems}</ul>
       </div>
     );
@@ -22,7 +24,7 @@ export class CheeseList extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    cheeses: state.cheeses
+    cheeses: state.cheese.cheeses
   };
 };
 
